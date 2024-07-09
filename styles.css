@@ -1,0 +1,55 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.project h3 {
+    font-size: 1.2em;
+}
+
+.project p {
+    font-size: 1em;
+}
+
+.project a {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}

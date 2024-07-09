@@ -1,0 +1,14 @@
+crie uma página na web que tenha um formulário bonito, que cadastre
+ no local storage nome idade e mensagem usando jquery 
+
+
+com base no json{
+"idade" : "17"
+"mensagem" : "niver da deusa suprema a perfeição na terra a mais 
+linda perfeita que não erra só humilha "
+"nome" : "samila a mais bela "
+}
+
+que está salvo no local storage, criar uma página html em que tenha 
+um slide com 5 fotos da aniversariante e que busque o nome a idade
+e a mensagem e exiba com efeitos

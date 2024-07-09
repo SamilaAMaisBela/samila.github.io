@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com jQuery e localStorage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  input[type="text"], input[type="number"], textarea {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  textarea {
+    height: 100px;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<form id="formCadastro">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" required><br>
+  
+  <label for="idade">Idade:</label>
+  <input type="number" id="idade" name="idade" required><br>
+  
+  <label for="mensagem">Mensagem:</label>
+  <textarea id="mensagem" name="mensagem" required></textarea><br>
+  
+  <input type="submit" value="Enviar">
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#formCadastro').submit(function(e) {
+    e.preventDefault(); // Evita o comportamento padrão do formulário
+
+    // Obtém os valores dos campos
+    var nome = $('#nome').val();
+    var idade = $('#idade').val();
+    var mensagem = $('#mensagem').val();
+
+    // Verifica se os campos estão preenchidos
+    if (nome !== '' && idade !== '' && mensagem !== '') {
+      // Cria um objeto com os dados do formulário
+      var formData = {
+        nome: nome,
+        idade: idade,
+        mensagem: mensagem
+      };
+
+      // Armazena os dados no localStorage (convertendo para JSON)
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      // Limpa os campos do formulário
+      $('#nome').val('');
+      $('#idade').val('');
+      $('#mensagem').val('');
+
+      alert('Cadastro realizado com sucesso!');
+      location.href = "aniversariante.html"
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
